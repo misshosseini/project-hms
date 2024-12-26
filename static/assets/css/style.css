@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+body {
+    direction: rtl;
+    text-align: right;
+}
