@@ -11,3 +11,10 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
+
+    def save(self, *args, **kwargs):
+        email_username, _ = self.email.split('@') # desphixs @ gmail.com
+        if self.username == "" or self.username == None:
+            self.username = email_username
+
+        super(User, self).save(*args, **kwargs) 
